@@ -7,4 +7,4 @@
 ## Guide
 
 ### ✔️ - Done
-### ⚠️ - Work in progress
+### ⚠️ - Work In Progress (WIP)
