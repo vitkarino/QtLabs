@@ -9,11 +9,9 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-    // Main widget and layout
     QWidget *centralWidget = new QWidget(this);
     QVBoxLayout *mainLayout = new QVBoxLayout(centralWidget);
 
-    // Add Ticket GroupBox
     QGroupBox *addTicketGroup = new QGroupBox("Додати квиток", this);
     QFormLayout *formLayout = new QFormLayout(addTicketGroup);
 
@@ -21,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     formLayout->addRow("Ім'я:", nameInput);
 
     priceInput = new QDoubleSpinBox(this);
-    priceInput->setRange(0, 10000); // Example range, can be adjusted
+    priceInput->setRange(0, 10000);
     formLayout->addRow("Ціна, грн:", priceInput);
 
     routeInput = new QLineEdit(this);
@@ -34,7 +32,6 @@ MainWindow::MainWindow(QWidget *parent)
     currentInput = new QCheckBox(this);
     formLayout->addRow("Актуальний:", currentInput);
 
-    // Output TextEdit
     commentsInput = new QTextEdit(this);
     formLayout->addRow("Коментарі (не обов'язково):", commentsInput);
 
@@ -42,26 +39,21 @@ MainWindow::MainWindow(QWidget *parent)
     formLayout->addWidget(addButton);
     mainLayout->addWidget(addTicketGroup);
 
-    // Show All Tickets Button
     showButton = new QPushButton("Показати всі квитки", this);
     mainLayout->addWidget(showButton);
 
-    // Remove Ticket Button
-    removeButton = new QPushButton("Видалити квиток", this);  // Update button name
+    removeButton = new QPushButton("Видалити квиток", this);
     mainLayout->addWidget(removeButton);
 
-    // Output TextEdit
     outputText = new QTextEdit(this);
     outputText->setReadOnly(true);
     mainLayout->addWidget(outputText);
 
-    // Set main layout
     setCentralWidget(centralWidget);
 
-    // Connect button signals to slots
     connect(addButton, &QPushButton::clicked, this, &MainWindow::addTicket);
     connect(showButton, &QPushButton::clicked, this, &MainWindow::showTickets);
-    connect(removeButton, &QPushButton::clicked, this, &MainWindow::removeTicket);  // Connect to removeTicket
+    connect(removeButton, &QPushButton::clicked, this, &MainWindow::removeTicket);
 }
 
 void MainWindow::addTicket()
@@ -84,6 +76,13 @@ void MainWindow::addTicket()
 
     tickets.push_back(ticket);
     outputText->append("Квиток успішно додано!");
+
+    nameInput->clear();
+    priceInput->setValue(0.0);
+    routeInput->clear();
+    currentInput->setChecked(false);
+    statusInput->setCurrentIndex(0);
+    commentsInput->clear();
 }
 
 void MainWindow::showTickets()
@@ -102,13 +101,13 @@ void MainWindow::showTickets()
     }
 }
 
-void MainWindow::removeTicket()  // Updated function name
+void MainWindow::removeTicket()
 {
     bool ok;
     int index = QInputDialog::getInt(this, "Видалити квиток", "Введіть номер квитка для видалення:", 1, 1, tickets.size(), 1, &ok);
 
     if (ok && index > 0 && index <= tickets.size()) {
-        tickets.erase(tickets.begin() + (index - 1));  // Remove ticket from the list
+        tickets.erase(tickets.begin() + (index - 1));
         outputText->append(QString("Квиток #%1 видалено.").arg(index));
     } else {
         QMessageBox::warning(this, "Помилка", "Введіть існуючий номер квитка.");
