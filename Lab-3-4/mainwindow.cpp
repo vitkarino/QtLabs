@@ -7,7 +7,6 @@
 #include <QInputDialog>
 #include <QDateTime>
 #include <QFileDialog>
-#include <fstream>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -45,19 +44,6 @@ MainWindow::MainWindow(QWidget *parent)
     showButton = new QPushButton("Показати всі квитки", this);
     mainLayout->addWidget(showButton);
 
-    saveButton = new QPushButton("Зберегти квитки у файл", this);
-    mainLayout->addWidget(saveButton);
-
-    QHBoxLayout *pathLayout = new QHBoxLayout();
-    pathInput = new QLineEdit(this);
-    pathInput->setPlaceholderText("Шлях до файлу...");
-    pathInput->setReadOnly(true);
-
-    choosePathButton = new QPushButton("Обрати шлях", this);
-    pathLayout->addWidget(pathInput);
-    pathLayout->addWidget(choosePathButton);
-    mainLayout->addLayout(pathLayout);
-
     removeButton = new QPushButton("Видалити квиток", this);
     mainLayout->addWidget(removeButton);
 
@@ -69,40 +55,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(addButton, &QPushButton::clicked, this, &MainWindow::addTicket);
     connect(showButton, &QPushButton::clicked, this, &MainWindow::showTickets);
-    connect(saveButton, &QPushButton::clicked, this, &MainWindow::saveTicketsToFile);
     connect(removeButton, &QPushButton::clicked, this, &MainWindow::removeTicket);
-    connect(choosePathButton, &QPushButton::clicked, this, &MainWindow::chooseFilePath);
-}
-
-void MainWindow::chooseFilePath()
-{
-    QString dir = QFileDialog::getExistingDirectory(this, "Обрати папку для збереження", QDir::homePath());
-    if (!dir.isEmpty()) {
-        saveDirectory = dir;
-        pathInput->setText(saveDirectory + "/tickets.txt");
-    }
-}
-
-void MainWindow::saveTicketsToFile()
-{
-    if (saveDirectory.isEmpty()) {
-        QMessageBox::warning(this, "Помилка", "Оберіть папку для збереження файлу.");
-        return;
-    }
-
-    QString fullPath = saveDirectory + "/tickets.txt";
-    std::ofstream file(fullPath.toStdString(), std::ios::out);
-    if (!file.is_open()) {
-        QMessageBox::warning(this, "Помилка", "Не вдалося відкрити файл для запису.");
-        return;
-    }
-
-    for (const auto &ticket : tickets) {
-        file << ticket.printInfo() << "\n---------------------\n";
-    }
-
-    file.close();
-    outputText->append("Квитки успішно збережено у файл: " + fullPath);
 }
 
 void MainWindow::addTicket()

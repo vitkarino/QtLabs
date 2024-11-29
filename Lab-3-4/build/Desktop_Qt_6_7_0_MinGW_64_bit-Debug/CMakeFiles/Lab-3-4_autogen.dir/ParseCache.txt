@@ -386,7 +386,7 @@ D:/Coding/CPP/QtLabs/Lab-3-4/mainwindow.h
  mdp:D:/Coding/CPP/QtLabs/Lab-3-4/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Lab-3-4_autogen/moc_predefs.h
  mdp:D:/Coding/CPP/QtLabs/Lab-3-4/mainwindow.h
  mdp:D:/Coding/CPP/QtLabs/Lab-3-4/ticket.h
-D:/Coding/CPP/QtLabs/Lab-3-4/mainwindow.cpp
 D:/Coding/CPP/QtLabs/Lab-3-4/main.cpp
+D:/Coding/CPP/QtLabs/Lab-3-4/mainwindow.cpp
 D:/Coding/CPP/QtLabs/Lab-3-4/ticket.h
 D:/Coding/CPP/QtLabs/Lab-3-4/ticket.cpp
