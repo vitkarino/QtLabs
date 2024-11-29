@@ -21,7 +21,9 @@ public:
 private slots:
     void addTicket();
     void showTickets();
+    void saveTicketsToFile();
     void removeTicket();
+    void chooseFilePath();
 
 private:
     QLineEdit *nameInput;
@@ -31,10 +33,13 @@ private:
     QCheckBox *currentInput;
     QPushButton *addButton;
     QPushButton *showButton;
+    QPushButton *saveButton;
     QPushButton *removeButton;
+    QPushButton *choosePathButton;
     QTextEdit *outputText;
     QTextEdit *commentsInput;
-
+    QLineEdit *pathInput;
+    QString saveDirectory;
     std::vector<Ticket> tickets;
 };
 

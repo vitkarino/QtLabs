@@ -2,22 +2,23 @@
 #define TICKET_H
 
 #include <string>
+using namespace std;
 
 class Ticket
 {
 private:
-    std::string fullName;
-    std::string purchaseTime;
+    string fullName;
+    string purchaseTime;
     double price;
-    std::string route;
+    string route;
     bool isCurrent;
-    std::string ticketComments;
-    std::string ticketStatus;
+    string ticketComments;
+    string ticketStatus;
 
 public:
-    Ticket(std::string name, std::string time, double p, std::string r, bool current, std::string comments, std::string status);
+    Ticket(string name, string time, double p, string r, bool current, string comments, string status);
 
-    std::string printInfo() const;
+    string printInfo() const;
     void removeTicket();
 };
 
