@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-cfba6f213ab77bfe273d.json",
+					"jsonFile" : "directory-.-Debug-cca7ff174d6497757888.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Lab-3-4::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Lab-3-4-Debug-fa7d356c3cf96de37ff5.json",
+					"jsonFile" : "target-Lab-3-4-Debug-d9f72a975b1093625c47.json",
 					"name" : "Lab-3-4",
 					"projectIndex" : 0
 				},
@@ -68,8 +68,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/Coding/CPP/QtLabs/Lab-3-4/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug",
-		"source" : "D:/Coding/CPP/QtLabs/Lab-3-4"
+		"build" : "C:/Users/kisev/Desktop/QtLabs/Lab-5/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug",
+		"source" : "C:/Users/kisev/Desktop/QtLabs/Lab-5"
 	},
 	"version" : 
 	{

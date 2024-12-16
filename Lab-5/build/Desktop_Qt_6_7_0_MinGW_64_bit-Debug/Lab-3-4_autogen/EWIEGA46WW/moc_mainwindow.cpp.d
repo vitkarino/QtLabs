@@ -1,5 +1,5 @@
-D:/Coding/CPP/QtLabs/Lab-3-4/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Lab-3-4_autogen/EWIEGA46WW/moc_mainwindow.cpp: D:/Coding/CPP/QtLabs/Lab-3-4/mainwindow.h \
-  D:/Coding/CPP/QtLabs/Lab-3-4/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Lab-3-4_autogen/moc_predefs.h \
+C:/Users/kisev/Desktop/QtLabs/Lab-5/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Lab-3-4_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Users/kisev/Desktop/QtLabs/Lab-5/mainwindow.h \
+  C:/Users/kisev/Desktop/QtLabs/Lab-5/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Lab-3-4_autogen/moc_predefs.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/q20memory.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/q20type_traits.h \
@@ -382,4 +382,4 @@ D:/Coding/CPP/QtLabs/Lab-3-4/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/Lab-3-4_a
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
-  D:/Coding/CPP/QtLabs/Lab-3-4/ticket.h
+  C:/Users/kisev/Desktop/QtLabs/Lab-5/ticket.h
